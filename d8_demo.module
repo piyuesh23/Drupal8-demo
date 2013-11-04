@@ -1,0 +1,57 @@
+<?php
+/**
+ * Implements hook_menu()
+ */
+function d8_demo_menu() {
+  $items = array();
+
+  // Drupal 8 content render page
+  $items['admin/config/development/d8_demo_content'] = array(
+    'title' => 'Drupal 8 demo menu',
+    'route_name' => 'd8_demo.static_page_demo',
+    'weight' => '-20',
+  );
+  // Drupal 8 config form render page
+  $items['admin/config/development/d8_demo_form'] = array(
+    'title' => 'Drupal 8 demo menu',
+    'route_name' => 'd8_demo.config_form',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_theme()
+ */
+function d8_demo_theme() {
+  $items = array(
+    'd8_demo_content' => array(
+      'variables' => array('items' => array()),
+    )
+  );
+
+  return $items;
+}
+
+/**
+ * Theme callback fot d8_demo_content
+ */
+function theme_d8_demo_content($variables) {
+  $output = '<h2> Rendering content using Drupal 8 demo Theme function.</h2>';
+  $output .= '<ul>';
+  foreach($variables['items'] as $item) {
+    $output .= '<li>' . $item . '</li>';
+  }
+  $output .= '</ul>';
+
+  return $output;
+}
+
+/**
+ * Implements hook_permission
+ */
+function d8_demo_permission() {
+  return array('Administer Drupal8 demo configuration' =>  array(
+      'title' => t('Administer Drupal8 demo configuration'),
+    ),
+  );
+}
