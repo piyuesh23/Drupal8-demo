@@ -16,6 +16,7 @@ function d8_demo_menu() {
     'title' => 'Drupal 8 Demo Form',
     'route_name' => 'd8_demo.config_form',
   );
+
   return $items;
 }
 

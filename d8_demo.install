@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the d8_demo module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function d8_demo_schema() {
+  $schema = array();
+  return $schema;
+}
