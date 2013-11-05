@@ -33,7 +33,7 @@ class d8DemoController extends ControllerBase {
   public function renderArgumentContent($arg1, $arg2) {
     $items = array('Arg1 => ' . $arg1, 'Arg2 => ' . $arg2);
     $variables = array(
-      '#theme' => 'd8_demo_content',
+      '#theme' => 'item_list',
       '#items' => $items,
       '#attributes' => array('class' => array('item-list')),
     );

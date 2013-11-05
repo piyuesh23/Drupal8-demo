@@ -12,8 +12,15 @@ d8_demo.dynamic_page_demo:
   requirements:
     _permission: 'Administer Drupal8 demo configuration'
 
+d8_demo.simple_form:
+  path: '/d8-demo-form'
+  defaults:
+    _form: \Drupal\d8_demo\Form\d8DemoForm
+  requirements:
+    _permission: 'Administer Drupal8 demo configuration'
+
 d8_demo.config_form:
-  path: '/admin/config/development/d8_demo_form'
+  path: '/admin/config/development/d8-demo-config'
   defaults:
     _form: \Drupal\d8_demo\Form\d8DemoConfigForm
   requirements:

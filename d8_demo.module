@@ -7,13 +7,13 @@ function d8_demo_menu() {
 
   // Drupal 8 content render page
   $items['admin/config/development/d8_demo_content'] = array(
-    'title' => 'Drupal 8 demo menu',
+    'title' => 'Drupal 8 Demo Content',
     'route_name' => 'd8_demo.static_page_demo',
     'weight' => '-20',
   );
   // Drupal 8 config form render page
   $items['admin/config/development/d8_demo_form'] = array(
-    'title' => 'Drupal 8 demo menu',
+    'title' => 'Drupal 8 Demo Form',
     'route_name' => 'd8_demo.config_form',
   );
   return $items;
