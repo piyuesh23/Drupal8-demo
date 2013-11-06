@@ -1,0 +1,9 @@
+d8_demo.demo_form_tab:
+  route_name: d8_demo.simple_form
+  title: 'Form rendered using FormBase'
+  tab_root_id: d8_demo.demo_form_tab
+
+d8_demo.config_form_tab:
+  route_name: d8_demo.config_form
+  title: 'Form rendered using ConfigFormBase'
+  tab_root_id: d8_demo.demo_form_tab
