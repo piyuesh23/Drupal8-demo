@@ -8,7 +8,9 @@
 namespace Drupal\d8_demo\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-
+use Drupal\user\UserInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Component\Utility\String;
 /**
  * Controller routines for user routes.
  */
@@ -30,8 +32,12 @@ class d8DemoController extends ControllerBase {
   /**
    * Dynamic menu controller
    */
-  public function renderArgumentContent($arg1, $arg2) {
-    $items = array('Arg1 => ' . $arg1, 'Arg2 => ' . $arg2);
+  public function renderArgumentContent(UserInterface $user, NodeInterface $node) {
+    $items = array(
+      'Arg1' => 'User: ' . $user->get('name')->value . '|' . $user->get('mail')->value,
+      'Arg2' => 'Node: ' . $node->get('title')->value . '|' . String::checkPlain($this->t($node->get('body')->value))
+    );
+
     $variables = array(
       '#theme' => 'item_list',
       '#items' => $items,

@@ -6,14 +6,14 @@ d8_demo.static_page_demo:
     _permission: 'Administer Drupal8 demo configuration'
 
 d8_demo.dynamic_page_demo:
-  path: '/admin/config/development/d8_demo_content/{arg1}/{arg2}'
+  path: '/admin/config/development/d8_demo_content/{user}/{node}'
   defaults:
     _content: \Drupal\d8_demo\Controller\d8DemoController::renderArgumentContent
   requirements:
     _permission: 'Administer Drupal8 demo configuration'
 
 d8_demo.simple_form:
-  path: '/d8-demo-form'
+  path: 'admin/config/development/d8_demo_form'
   defaults:
     _form: \Drupal\d8_demo\Form\d8DemoForm
   requirements:

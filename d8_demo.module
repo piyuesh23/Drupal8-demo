@@ -14,7 +14,8 @@ function d8_demo_menu() {
   // Drupal 8 config form render page
   $items['admin/config/development/d8_demo_form'] = array(
     'title' => 'Drupal 8 Demo Form',
-    'route_name' => 'd8_demo.config_form',
+    'route_name' => 'd8_demo.simple_form',
+    'weight' => '-10',
   );
 
   return $items;
