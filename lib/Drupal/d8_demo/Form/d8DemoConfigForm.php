@@ -21,7 +21,7 @@ class d8DemoConfigForm extends ConfigFormBase {
     $config_default = $this->configFactory->get('d8_demo.settings')->get('d8_demo_config_text');
     $form['d8_demo_textfield_config'] = array(
       '#type' => 'textfield',
-      '#title' => t('Demo textfield'),
+      '#title' => t('Config Form Demo textfield'),
       '#default_value' => !empty($config_default) ? $config_default : 'Hello Drupal Camp Delhi!!'
     );
 

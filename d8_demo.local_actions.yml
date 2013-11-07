@@ -1,0 +1,5 @@
+d8_demo_add_session:
+  route_name: d8_demo.add_session
+  title: 'Add new session'
+  appears_on:
+    - d8_demo.session_demo

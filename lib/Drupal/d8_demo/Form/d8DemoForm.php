@@ -26,7 +26,7 @@ class d8DemoForm implements FormInterface {
   function buildForm(array $form, array &$form_state) {
     $form['d8_demo_textfield'] = array(
       '#type' => 'textfield',
-      '#title' => t('Demo textfield'),
+      '#title' => t('Simple Form Demo textfield'),
       '#default_value' => 'Hello DrupalCamp Delhi!',
     );
 

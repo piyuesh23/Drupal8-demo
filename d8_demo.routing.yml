@@ -1,27 +1,47 @@
+d8_demo.session_demo:
+  path: '/admin/config/development/d8-session-content'
+  defaults:
+    _content: \Drupal\d8_demo\Controller\d8DemoController::renderDbContent
+  requirements:
+    _permission: 'Administer Drupal8 demo configuration'
+
 d8_demo.static_page_demo:
-  path: '/admin/config/development/d8_demo_content'
+  path: '/admin/config/development/d8-demo-content'
   defaults:
     _content: \Drupal\d8_demo\Controller\d8DemoController::renderContent
   requirements:
     _permission: 'Administer Drupal8 demo configuration'
 
 d8_demo.dynamic_page_demo:
-  path: '/admin/config/development/d8_demo_content/{user}/{node}'
+  path: '/admin/config/development/d8-demo-content/{user}/{node}'
   defaults:
     _content: \Drupal\d8_demo\Controller\d8DemoController::renderArgumentContent
   requirements:
     _permission: 'Administer Drupal8 demo configuration'
 
 d8_demo.simple_form:
-  path: 'admin/config/development/d8_demo_form'
+  path: 'admin/config/development/d8-demo-form'
   defaults:
+    _title: Drupal 8 Simple Form
     _form: \Drupal\d8_demo\Form\d8DemoForm
+  options:
+    _access_mode: ALL
   requirements:
     _permission: 'Administer Drupal8 demo configuration'
+    _access_check_admin: 'TRUE'
 
 d8_demo.config_form:
   path: '/admin/config/development/d8-demo-config'
   defaults:
+    _title: Drupal 8 Config Form
     _form: \Drupal\d8_demo\Form\d8DemoConfigForm
+  requirements:
+    _permission: 'Administer Drupal8 demo configuration'
+
+d8_demo.add_session:
+  path: '/admin/config/development/d8-demo-session-add'
+  defaults:
+    _title: Drupal 8 Demo session add form
+    _form: \Drupal\d8_demo\Form\d8SessionAddForm
   requirements:
     _permission: 'Administer Drupal8 demo configuration'

@@ -1,0 +1,9 @@
+services:
+  d8_demo.database:
+    class: Drupal\d8_demo\Controller\d8DemoController
+    arguments: ['@database']
+
+  access_check.superadmin:
+    class: Drupal\d8_demo\Access\d8DemoAccessCheck
+    tags:
+      - {name: access_check}

@@ -20,14 +20,13 @@ class d8DemoAccessCheck implements StaticAccessCheckInterface {
    * {@inheritdoc}
    */
   public function appliesTo() {
-    return array('_access_dynamic_d8_demo');
+    return array('_access_check_admin');
   }
 
   /**
    * {@inheritdoc}
    */
   public function access(Route $route, Request $request) {
-    error_log(print_r($GLOBALS, TRUE));
-    return $GLOBALS['user']->isAuthenticated() ? static::ALLOW : static::DENY;
+    return in_array('administrator', $GLOBALS['user']->getRoles()) ? static::ALLOW : static::DENY;
   }
 }

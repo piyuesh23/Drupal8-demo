@@ -7,3 +7,13 @@ d8_demo.config_form_tab:
   route_name: d8_demo.config_form
   title: 'Form rendered using ConfigFormBase'
   tab_root_id: d8_demo.demo_form_tab
+
+d8_demo.content_tab:
+  route_name: d8_demo.static_page_demo
+  title: 'Content rendered using custom theme'
+  tab_root_id: d8_demo.content_tab
+
+d8_demo.session_content_tab:
+  route_name: d8_demo.session_demo
+  title: 'Session Table content'
+  tab_root_id: d8_demo.content_tab
