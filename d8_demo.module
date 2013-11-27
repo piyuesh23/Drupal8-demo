@@ -28,7 +28,11 @@ function d8_demo_theme() {
   $items = array(
     'd8_demo_content' => array(
       'variables' => array('items' => array()),
-    )
+    ),
+    'd8_demo_link' => array(
+      'variables' => array('url' => NULL),
+      'template' => 'd8-demo-link'
+    ),
   );
 
   return $items;
