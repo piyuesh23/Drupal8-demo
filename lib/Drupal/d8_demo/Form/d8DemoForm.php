@@ -6,12 +6,12 @@
 
 namespace Drupal\d8_demo\Form;
 
-use Drupal\Core\Form\FormInterface;
+use Drupal\Core\Form\FormBase;
 
 /**
  * Provides a demo form
  */
-class d8DemoForm implements FormInterface {
+class d8DemoForm extends FormBase {
 
   /**
    * Implements Drupal\core\Form\FormInterface::getFormId().
@@ -27,7 +27,7 @@ class d8DemoForm implements FormInterface {
     $form['d8_demo_textfield'] = array(
       '#type' => 'textfield',
       '#title' => t('Simple Form Demo textfield'),
-      '#default_value' => 'Hello DrupalCamp Delhi!',
+      '#default_value' => 'Hello DrupalCamp Mumbai!',
     );
 
     $form['submit'] = array(
@@ -42,7 +42,7 @@ class d8DemoForm implements FormInterface {
    */
   function validateForm(array &$form, array &$form_state) {
     if (empty($form_state['values']['d8_demo_textfield'])) {
-      form_set_error('', 'Demo textfield is empty!');
+      $this->setFormError('', $form_state, $this->t('Demo textfield is empty!'));
     }
   }
 

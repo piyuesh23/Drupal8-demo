@@ -6,13 +6,13 @@ function d8_demo_menu() {
   $items = array();
 
   // Drupal 8 content render page
-  $items['admin/config/development/d8_demo_content'] = array(
+  $items['admin/config/development/d8-demo-content'] = array(
     'title' => 'Drupal 8 Demo Content',
     'route_name' => 'd8_demo.static_page_demo',
     'weight' => '-20',
   );
   // Drupal 8 config form render page
-  $items['admin/config/development/d8_demo_form'] = array(
+  $items['admin/config/development/d8-demo-form'] = array(
     'title' => 'Drupal 8 Demo Form',
     'route_name' => 'd8_demo.simple_form',
     'weight' => '-10',
