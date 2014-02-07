@@ -9,6 +9,7 @@ d8_demo.static_page_demo:
   path: '/admin/config/development/d8-demo-content'
   defaults:
     _content: \Drupal\d8_demo\Controller\d8DemoController::renderContent
+    _title: 'Drupal 8 Demo Content'
   requirements:
     _permission: 'Administer Drupal8 demo configuration'
 

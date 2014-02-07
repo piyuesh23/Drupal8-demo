@@ -22,7 +22,8 @@ class d8DemoConfigForm extends ConfigFormBase {
     $form['d8_demo_textfield_config'] = array(
       '#type' => 'textfield',
       '#title' => t('Config Form Demo textfield'),
-      '#default_value' => !empty($config_default) ? $config_default : 'Hello Drupal Camp Delhi!!'
+      '#required' => TRUE,
+      '#default_value' => !empty($config_default) ? $config_default : 'Hello Drupal Camp Mumbai!!'
     );
 
     $form['submit'] = array(

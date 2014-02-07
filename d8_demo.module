@@ -1,24 +1,27 @@
 <?php
 /**
- * Implements hook_menu()
+ * Implements hook_menu_link_defaults()
  */
-function d8_demo_menu() {
-  $items = array();
+function d8_demo_menu_link_defaults() {
+  $links = array();
 
-  // Drupal 8 content render page
-  $items['admin/config/development/d8-demo-content'] = array(
-    'title' => 'Drupal 8 Demo Content',
+  $links['d8_demo.static_page_demo'] = array(
+    'link_title' => 'Drupal 8 Demo Content',
+    'parent' => 'system.admin.config.development',
+    'description' => 'Renders demo content using D8 theme functions.',
     'route_name' => 'd8_demo.static_page_demo',
     'weight' => '-20',
   );
   // Drupal 8 config form render page
-  $items['admin/config/development/d8-demo-form'] = array(
-    'title' => 'Drupal 8 Demo Form',
+  $links['d8_demo.form_demo'] = array(
+    'link_title' => 'Drupal 8 Demo Form',
+    'parent' => 'system.admin.config.development',
+    'description' => 'Renders form using Drupal 8 form Api.',
     'route_name' => 'd8_demo.simple_form',
     'weight' => '-10',
   );
 
-  return $items;
+  return $links;
 }
 
 /**
@@ -30,7 +33,7 @@ function d8_demo_theme() {
       'variables' => array('items' => array()),
     ),
     'd8_demo_link' => array(
-      'variables' => array('url' => NULL),
+      'variables' => array('video_id' => NULL),
       'template' => 'd8-demo-link'
     ),
   );

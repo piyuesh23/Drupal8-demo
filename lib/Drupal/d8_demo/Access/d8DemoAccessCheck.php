@@ -7,27 +7,20 @@
 
 namespace Drupal\d8_demo\Access;
 
-use Drupal\Core\Access\AccessCheckInterface;
+use Drupal\Core\Routing\Access\AccessInterface;
+use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Drupal\Core\Session\AccountInterface;
 
 /**
  * Determines access to routes based on login status of current user.
  */
-class d8DemoAccessCheck implements AccessCheckInterface {
-
-  /**
-   * {@inheritdoc}
-   */
-  public function applies(Route $route) {
-    return array('_access_check_admin');
-  }
+class d8DemoAccessCheck implements AccessInterface {
 
   /**
    * {@inheritdoc}
    */
   public function access(Route $route, Request $request, AccountInterface $account) {
-    return in_array('administrator', $GLOBALS['user']->getRoles()) ? static::ALLOW : static::DENY;
+    return ($GLOBALS['user']->id() == 1) ? static::ALLOW : static::DENY;
   }
 }

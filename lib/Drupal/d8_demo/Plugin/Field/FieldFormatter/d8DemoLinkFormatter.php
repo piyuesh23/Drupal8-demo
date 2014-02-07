@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\d8_demo\Plugin\field\formatter\YouTubeLinkFormatter.
+ * Contains \Drupal\d8_demo\Plugin\field\formatter\d8DemoLinkFormatter.
  */
 
 namespace Drupal\d8_demo\Plugin\Field\FieldFormatter;
@@ -28,9 +28,13 @@ class d8DemoLinkFormatter extends FormatterBase {
   public function viewElements(FieldItemListInterface $items) {
     foreach ($items as $delta => $item) {
       $url = $item->url;
+      $url_parts  = parse_url($url);
+      $video_query = $url_parts['query'];
+      $video_id = str_replace('v=', '', $video_query);
+
       $element[$delta] = array(
         '#theme' => 'd8_demo_link',
-        'url' => $url
+        '#video_id' => $video_id
       );
     }
 
