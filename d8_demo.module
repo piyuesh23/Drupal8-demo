@@ -1,30 +1,5 @@
 <?php
 /**
- * Implements hook_menu_link_defaults()
- */
-function d8_demo_menu_link_defaults() {
-  $links = array();
-
-  $links['d8_demo.static_page_demo'] = array(
-    'link_title' => 'Drupal 8 Demo Content',
-    'parent' => 'system.admin.config.development',
-    'description' => 'Renders demo content using D8 theme functions.',
-    'route_name' => 'd8_demo.static_page_demo',
-    'weight' => '-20',
-  );
-  // Drupal 8 config form render page
-  $links['d8_demo.form_demo'] = array(
-    'link_title' => 'Drupal 8 Demo Form',
-    'parent' => 'system.admin.config.development',
-    'description' => 'Renders form using Drupal 8 form Api.',
-    'route_name' => 'd8_demo.simple_form',
-    'weight' => '-10',
-  );
-
-  return $links;
-}
-
-/**
  * Implements hook_theme()
  */
 function d8_demo_theme() {

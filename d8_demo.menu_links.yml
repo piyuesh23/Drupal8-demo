@@ -1,0 +1,10 @@
+d8_demo.static_page_demo:
+  title: 'Drupal 8 Demo Content'
+  description: 'Renders demo content using D8 theme functions.'
+  parent: system.admin_config_development
+  route_name: d8_demo.static_page_demo
+d8_demo.simple_form:
+  title: 'Drupal 8 Demo Form'
+  description: 'Renders form using Drupal 8 form Api.'
+  parent: system.admin_config_development
+  route_name: d8_demo.simple_form
